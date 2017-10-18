@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.klaus.pruebafirebase.MainActivity">
 
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresa un nuevo carro a la base de datos"
+        android:textColor="#272221"
+        android:textSize="20sp"
+        android:id="@+id/tvTitulo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/etDueno"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:hint="Nombre del dueno"
+        android:layout_below="@+id/tvTitulo"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteY="100dp"
+        tools:layout_editor_absoluteX="39dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/etMarca"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:hint="Marca del carro"
+        android:layout_below="@+id/etDueno"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteY="100dp"
+        tools:layout_editor_absoluteX="39dp"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:inputType="number"
@@ -13,19 +50,34 @@
         android:layout_width="306dp"
         android:layout_height="40dp"
         android:background="#FFFFFF"
-        android:hint="Numero de puertas"
+        android:hint="Numero de puerta"
+        android:layout_below="@+id/etMarca"
         android:layout_centerHorizontal="true"
         tools:layout_editor_absoluteY="100dp"
-        tools:layout_editor_absoluteX="39dp" />
+        tools:layout_editor_absoluteX="39dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:inputType="number"
+        android:id="@+id/etRuedas"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:hint="Numero de puertas"
+        android:layout_below="@+id/etPuertas"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteY="100dp"
+        tools:layout_editor_absoluteX="39dp"
+        android:layout_marginTop="20dp"/>
+
 
     <Button
         android:id="@+id/boton_carros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Agregar un nuevo carro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/etRuedas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

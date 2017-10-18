@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 numpuertas = Integer.parseInt(txtPuertas.getText().toString());
                 Carro carro = new Carro("Audi","Klaus",numpuertas , 4);
                 pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).push().setValue(carro);
-            } 
+            }
         });
         /*
         pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).addValueEventListener(new ValueEventListener() {
