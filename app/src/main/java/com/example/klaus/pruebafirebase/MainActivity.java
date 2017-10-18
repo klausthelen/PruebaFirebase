@@ -18,22 +18,33 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button bt_carro;
+    EditText txtDueno;
+    EditText txtMarca;
     EditText txtPuertas;
+    EditText txtRuedas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         bt_carro = (Button) findViewById(R.id.boton_carros);
+        txtDueno = (EditText)findViewById(R.id.etDueno);
+        txtMarca = (EditText)findViewById(R.id.etMarca);
+        txtRuedas = (EditText)findViewById(R.id.etRuedas);
         txtPuertas = (EditText)findViewById(R.id.etPuertas);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference pruebaRef = database.getReference(FirebaseReferences.PRUEBA_REFERENCE);
 
         bt_carro.setOnClickListener(new View.OnClickListener() {
-            int numpuertas = 0;
+            int numpuertas, numruedas = 0;
+            String dueno, marca = "";
             public void onClick(View view) {
                 numpuertas = Integer.parseInt(txtPuertas.getText().toString());
-                Carro carro = new Carro("Audi","Klaus",numpuertas , 4);
+                numruedas = Integer.parseInt(txtRuedas.getText().toString());
+                dueno = txtDueno.getText().toString();
+                marca = txtMarca.getText().toString();
+                Carro carro = new Carro(marca,dueno,numpuertas ,numruedas);
                 pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).push().setValue(carro);
             }
         });

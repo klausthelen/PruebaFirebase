@@ -63,7 +63,7 @@
         android:layout_width="306dp"
         android:layout_height="40dp"
         android:background="#FFFFFF"
-        android:hint="Numero de puertas"
+        android:hint="Numero de ruedas"
         android:layout_below="@+id/etPuertas"
         android:layout_centerHorizontal="true"
         tools:layout_editor_absoluteY="100dp"
