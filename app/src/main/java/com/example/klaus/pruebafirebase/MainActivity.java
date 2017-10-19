@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.klaus.pruebafirebase.Objetos.Carro;
 import com.example.klaus.pruebafirebase.Objetos.FirebaseReferences;
@@ -45,7 +46,15 @@ public class MainActivity extends AppCompatActivity {
                 dueno = txtDueno.getText().toString();
                 marca = txtMarca.getText().toString();
                 Carro carro = new Carro(marca,dueno,numpuertas ,numruedas);
-                pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).push().setValue(carro);
+                try {
+                    pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).push().setValue(carro);
+                    Toast.makeText(getApplicationContext(), "Se ingreso el carro a la base de datos" , Toast.LENGTH_SHORT).show();
+                }
+                catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Hubo un error " , Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
         /*

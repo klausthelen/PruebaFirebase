@@ -11,7 +11,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingresa un nuevo carro a la base de datos"
+        android:text="Ingresa un nuevo carro a la base de datos NNNNN"
         android:textColor="#272221"
         android:textSize="20sp"
         android:id="@+id/tvTitulo"
