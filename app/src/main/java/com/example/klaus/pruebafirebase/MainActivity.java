@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Carro carro = new Carro(marca,dueno,numpuertas ,numruedas);
                 try {
                     pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).push().setValue(carro);
-                    Toast.makeText(getApplicationContext(), "Se ingreso el carro a la base de datos" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Se ingreso el auto a la base de datos" , Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){
                     Toast.makeText(getApplicationContext(), "Hubo un error " , Toast.LENGTH_SHORT).show();
