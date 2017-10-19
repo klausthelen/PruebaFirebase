@@ -24,12 +24,14 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //Se agrega esto para firebase
+    //Para la base de datos
+    //Para el storage
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    //Se agrega esto para firebase
     compile 'com.google.firebase:firebase-core:9.0.0'
-    //Para la base de datos
     compile 'com.google.firebase:firebase-database:9.0.0'
+    compile 'com.google.firebase:firebase-storage:9.0.0'
     testCompile 'junit:junit:4.12'
 }
 //Se agrega esto para firebase

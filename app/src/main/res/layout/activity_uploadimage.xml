@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.klaus.pruebafirebase.UploadimageActivity">
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sube una imagen de un carro"
+        android:textColor="#272221"
+        android:textSize="20sp"
+        android:id="@+id/tvTitulomain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+    <Button
+        android:id="@+id/boton_subir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subir foto del carro"
+        android:layout_below="@+id/tvTitulomain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/iv_imagen"
+        android:layout_below="@+id/boton_subir"/>
+
+</RelativeLayout>

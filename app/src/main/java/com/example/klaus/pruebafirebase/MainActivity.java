@@ -1,5 +1,7 @@
 package com.example.klaus.pruebafirebase;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,25 +12,34 @@ import android.widget.Toast;
 
 import com.example.klaus.pruebafirebase.Objetos.Carro;
 import com.example.klaus.pruebafirebase.Objetos.FirebaseReferences;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class MainActivity extends AppCompatActivity {
 
     Button bt_carro;
+    Button bt_next;
     EditText txtDueno;
     EditText txtMarca;
     EditText txtPuertas;
     EditText txtRuedas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         bt_carro = (Button) findViewById(R.id.boton_carros);
+        bt_next = (Button) findViewById(R.id.boton_next);
         txtDueno = (EditText)findViewById(R.id.etDueno);
         txtMarca = (EditText)findViewById(R.id.etMarca);
         txtRuedas = (EditText)findViewById(R.id.etRuedas);
@@ -58,6 +69,15 @@ public class MainActivity extends AppCompatActivity {
             }
             String test = "Test";
         });
+
+        bt_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent siguiente = new Intent(MainActivity.this, UploadimageActivity.class);
+                startActivity(siguiente);
+            }
+        });
+
         /*
         pruebaRef.child(FirebaseReferences.CARRO_REFERENCE).addValueEventListener(new ValueEventListener() {
             @Override
@@ -74,4 +94,7 @@ public class MainActivity extends AppCompatActivity {
         });
         */
     }
+
+
+
 }
